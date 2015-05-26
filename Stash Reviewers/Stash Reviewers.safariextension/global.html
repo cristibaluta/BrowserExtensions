@@ -1,28 +1,30 @@
 <!DOCTYPE HTML>
-<script>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="styles/main.css" type="text/css"/>
+<script type="text/javascript">
+
 safari.application.addEventListener("command", performCommand, false);
 safari.application.addEventListener("validate", validateCommand, false);
 
 function performCommand(event) {
-    if (event.command !== "alfanumeric_copy")
-        return;
-	// alert("Please copy it from here:\n\n" + event.userInfo);
-	copyTextToClipboard(event.userInfo);
+	
+    if (event.command == "reviewers_copy") {
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('copyReviewers', 'copyReviewers');
+    } else if (event.command == "reviewers_paste") {
+    	safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('pasteReviewers', 'pasteReviewers');
+    }
 }
 
 function validateCommand(event) {
-    if (event.command !== "alfanumeric_copy")
-        return;
-    var query = event.userInfo;
-    if (query.length == 0 || !query) {
-        event.target.disabled = true;
-    }
-	if (query.length > 25) {
-	    query = query.substr(0, 25);
-	    query = query.replace(/^\s+|\s+$/g, "");
-	    query = query + '...'
+    if (event.command == "reviewers_copy") {
+        event.target.title = 'Copy reviewers';
+	} else if (event.command !== "reviewers_paste") {
+		event.target.title = 'Paste reviewers';
 	}
-	event.target.title = 'Copy alfanumeric: "'+query+'"';
 }
 
 </script>
+</head>
+</html>

@@ -5,11 +5,11 @@
 	<key>Author</key>
 	<string>Baluta Cristian</string>
 	<key>Builder Version</key>
-	<string>10600.7.5</string>
+	<string>10600.5.17</string>
 	<key>CFBundleDisplayName</key>
-	<string>Alfanumeric</string>
+	<string>Stash reviewers</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.ralcr.alfanumeric</string>
+	<string>com.ralcr.stash.reviewers</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
@@ -22,11 +22,19 @@
 		<array>
 			<dict>
 				<key>Command</key>
-				<string>alfanumeric_copy</string>
+				<string>reviewers_copy</string>
 				<key>Identifier</key>
-				<string>com.ralcr.alfanumeric.underscores</string>
+				<string>com.ralcr.stash.reviewers.copy</string>
 				<key>Title</key>
-				<string>Copy selection as alfanumeric</string>
+				<string>Copy reviewers</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>reviewers_paste</string>
+				<key>Identifier</key>
+				<string>com.ralcr.stash.reviewers.paste</string>
+				<key>Title</key>
+				<string>Paste reviewers</string>
 			</dict>
 		</array>
 		<key>Global Page</key>
