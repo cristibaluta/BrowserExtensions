@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<script>
+safari.application.addEventListener("command", performCommand, false);
+safari.application.addEventListener("validate", validateCommand, false);
+
+function performCommand(event) {
+    if (event.command !== "alfanumeric_copy")
+        return;
+	// alert("Please copy it from here:\n\n" + event.userInfo);
+	copyTextToClipboard(event.userInfo);
+}
+
+function validateCommand(event) {
+    if (event.command !== "alfanumeric_copy")
+        return;
+    var query = event.userInfo;
+    if (query.length == 0 || !query) {
+        event.target.disabled = true;
+    }
+	if (query.length > 25) {
+	    query = query.substr(0, 25);
+	    query = query.replace(/^\s+|\s+$/g, "");
+	    query = query + '...'
+	}
+	event.target.title = 'Copy alfanumeric: "'+query+'"';
+}
+
+</script>

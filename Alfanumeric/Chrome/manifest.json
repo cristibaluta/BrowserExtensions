@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "Alfanumeric",
+  "description": "This extension removes non-alfanumeric characters from a string and replaces spaces with underscores",
+  "version": "1.0",
+
+  "icons": {
+	  
+  },
+		  
+  "permissions": [
+	  "clipboardWrite",
+	  "contextMenus"
+  ],
+  
+  "background": {
+      "scripts": ["alfanumeric.js"]
+  }
+}
