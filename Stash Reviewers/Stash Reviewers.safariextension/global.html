@@ -2,18 +2,18 @@
 <html>
 <head>
 <title></title>
-<link rel="stylesheet" href="styles/main.css" type="text/css"/>
 <script type="text/javascript">
 
 safari.application.addEventListener("command", performCommand, false);
 safari.application.addEventListener("validate", validateCommand, false);
+safari.application.addEventListener("message", copyReviewers, false);
 
 function performCommand(event) {
 	
     if (event.command == "reviewers_copy") {
-		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('copyReviewers', 'copyReviewers');
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('copyReviewers', null);
     } else if (event.command == "reviewers_paste") {
-    	safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('pasteReviewers', 'pasteReviewers');
+    	safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('pasteReviewers', safari.extension.settings.reviewers);
     }
 }
 
@@ -23,6 +23,10 @@ function validateCommand(event) {
 	} else if (event.command !== "reviewers_paste") {
 		event.target.title = 'Paste reviewers';
 	}
+}
+
+function copyReviewers(e) {
+	safari.extension.settings.reviewers = e.message;
 }
 
 </script>

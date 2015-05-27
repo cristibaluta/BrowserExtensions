@@ -4,11 +4,25 @@
 <array>
 	<dict>
 		<key>DefaultValue</key>
-		<string>---</string>
+		<string></string>
 		<key>Key</key>
 		<string>reviewers</string>
 		<key>Secure</key>
-		<true/>
+		<false/>
+		<key>Title</key>
+		<string>Reviewers copied</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<false/>
+		<key>Key</key>
+		<string>autopaste</string>
+		<key>Title</key>
+		<string>Automatically paste reviewers</string>
+		<key>Type</key>
+		<string>CheckBox</string>
 	</dict>
 </array>
 </plist>
