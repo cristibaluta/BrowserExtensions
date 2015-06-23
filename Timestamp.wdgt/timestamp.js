@@ -24,7 +24,11 @@ function updateDateFromTimestamp() {
 }
 
 function updateTimestampFromDate() {
-	document.getElementsByName('timestamp')[0].value = new Date(parseInt(document.getElementsByName('inYear')[0].value), 
-	parseInt(document.getElementsByName('inMon')[0].value), 
-	parseInt(document.getElementsByName('inDay')[0].value)).getTime();
+	document.getElementsByName('timestamp')[0].value = new Date(
+		parseInt(document.getElementsByName('inYear')[0].value), 
+		parseInt(document.getElementsByName('inMon')[0].value), 
+		parseInt(document.getElementsByName('inDay')[0].value),
+		parseInt(document.getElementsByName('inHr')[0].value), 
+		parseInt(document.getElementsByName('inMin')[0].value), 
+		parseInt(document.getElementsByName('inSec')[0].value)).getTime();
 }
