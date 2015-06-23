@@ -6,8 +6,8 @@ safari.application.addEventListener("validate", validateCommand, false);
 function performCommand(event) {
     if (event.command !== "alfanumeric_copy")
         return;
-	// alert("Please copy it from here:\n\n" + event.userInfo);
-	copyTextToClipboard(event.userInfo);
+	alert("Please copy it from here:\n\n" + event.userInfo);
+	// copyTextToClipboard(event.userInfo);
 }
 
 function validateCommand(event) {

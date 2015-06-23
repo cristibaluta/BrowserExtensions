@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+}
+ 
+.helloText {
+    font: 26px "Lucida Grande";
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 41px;
+    left: 32px;
+}

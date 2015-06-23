@@ -1,0 +1,44 @@
+<html>
+<head>
+<style>
+    @import "timestamp.css";
+</style>
+</head>
+ 
+<body>
+	<input type="text" name="timestamp" size="30" onkeyup="updateDateFromTimestamp()">
+	<input name="result" type="text" value="" size="30" readonly="">
+	
+	<table border="0">
+	  <tbody>
+	  <tr>
+	    <th>Year:</th>
+	    <th>&nbsp;</th>
+	    <th>Mon:</th>
+	    <th>&nbsp;</th>
+	    <th>Day:</th>
+	    <th>&nbsp;</th>
+	    <th>Hr:</th>
+	    <th>&nbsp;</th>
+	    <th>Min:</th>
+	    <th>&nbsp;</th>
+	    <th>Sec:</th>
+	  </tr>
+	  <tr>
+	    <td><input type="text" size="4" maxlength="4" name="inYear" onkeyup="updateTimestampFromDate()"></td>
+	    <th>/</th>
+	    <td><input type="text" size="4" maxlength="2" name="inMon" onkeyup="updateTimestampFromDate()"></td>
+	    <th>/</th>
+	    <td><input type="text" size="4" maxlength="2" name="inDay" onkeyup="updateTimestampFromDate()"></td>
+	    <th>at</th>
+	    <td><input type="text" size="4" maxlength="2" name="inHr" onkeyup="updateTimestampFromDate()"></td>
+	    <th>:</th>
+	    <td><input type="text" size="4" maxlength="2" name="inMin" onkeyup="updateTimestampFromDate()"></td>
+	    <th>:</th>
+	    <td><input type="text" size="4" maxlength="2" name="inSec" onkeyup="updateTimestampFromDate()"></td>
+	  </tr>
+	  </tbody>
+	</table>
+	<script type='text/javascript' src='timestamp.js'></script>
+</body>
+</html>
