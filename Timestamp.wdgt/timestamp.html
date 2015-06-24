@@ -1,44 +1,134 @@
 <html>
 <head>
 <style>
-    @import "timestamp.css";
+body {
+    margin: 0;
+}
+ 
+.timestamp {
+    font: 26px "Lucida Grande";
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 16px;
+    left: 20px;
+	width: 210px;
+}
+
+.sec {
+    font: 10px "Lucida Grande";
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 24px;
+    left: 215px;
+	width: 30px;
+}
+
+.datePreview {
+    font: 10px "Lucida Grande";
+    color: black;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+	width: 210px;
+}
+
+.date {
+    font: 10px "Lucida Grande";
+    color: black;
+    position: absolute;
+    top: 90px;
+    left: 5px;
+	width: 240px;
+}
+
+textarea, input {
+	background-color: transparent;
+	border: 0px solid;
+	text-align: center;
+}
 </style>
 </head>
  
 <body>
-	<input type="text" name="timestamp" size="30" onkeyup="updateDateFromTimestamp()">
-	<input name="result" type="text" value="" size="30" readonly="">
+	<img src="Default.png" />
+	<input type="text" class="timestamp" name="timestamp" size="30" onkeyup="updateDateFromTimestamp()">
+	<p class="sec">sec</p>
+	<input name="result" class="datePreview" type="text" value="" size="30" readonly="">
 	
-	<table border="0">
+	<table border="0" class="date">
 	  <tbody>
 	  <tr>
 	    <th>Year:</th>
-	    <th>&nbsp;</th>
 	    <th>Mon:</th>
-	    <th>&nbsp;</th>
 	    <th>Day:</th>
 	    <th>&nbsp;</th>
 	    <th>Hr:</th>
-	    <th>&nbsp;</th>
 	    <th>Min:</th>
-	    <th>&nbsp;</th>
 	    <th>Sec:</th>
 	  </tr>
 	  <tr>
 	    <td><input type="text" size="4" maxlength="4" name="inYear" onkeyup="updateTimestampFromDate()"></td>
-	    <th>/</th>
 	    <td><input type="text" size="4" maxlength="2" name="inMon" onkeyup="updateTimestampFromDate()"></td>
-	    <th>/</th>
 	    <td><input type="text" size="4" maxlength="2" name="inDay" onkeyup="updateTimestampFromDate()"></td>
-	    <th>at</th>
+	    <th>/</th>
 	    <td><input type="text" size="4" maxlength="2" name="inHr" onkeyup="updateTimestampFromDate()"></td>
-	    <th>:</th>
 	    <td><input type="text" size="4" maxlength="2" name="inMin" onkeyup="updateTimestampFromDate()"></td>
-	    <th>:</th>
 	    <td><input type="text" size="4" maxlength="2" name="inSec" onkeyup="updateTimestampFromDate()"></td>
 	  </tr>
 	  </tbody>
 	</table>
-	<script type='text/javascript' src='timestamp.js'></script>
+	
+<script>
+	var dayOfWeek = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+	var monthName = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+	var currentDate = new Date();
+	document.getElementsByName('timestamp')[0].value = parseInt(currentDate.getTime()/1000);
+	updateDateFromTimestamp();
+
+	function updateDateFromTimestamp() {
+		var timestamp = document.getElementsByName('timestamp')[0];
+		var date = new Date(parseInt(timestamp.value) * 1000);
+		if (date.getTimezoneOffset() != 0){
+		    date.setTime( date.getTime() + date.getTimezoneOffset()*60*1000 );
+		}
+		updateHumanDate(date);
+		
+		document.getElementsByName('inYear')[0].value = date.getFullYear();
+		document.getElementsByName('inMon')[0].value = date.getMonth() + 1;
+		document.getElementsByName('inDay')[0].value = date.getDate();
+		document.getElementsByName('inHr')[0].value = date.getHours();
+		document.getElementsByName('inMin')[0].value = date.getMinutes();
+		document.getElementsByName('inSec')[0].value = date.getSeconds();
+	}
+
+	function updateTimestampFromDate() {
+		var date = new Date(
+			parseInt(document.getElementsByName('inYear')[0].value), 
+			parseInt(document.getElementsByName('inMon')[0].value)-1, 
+			parseInt(document.getElementsByName('inDay')[0].value),
+			parseInt(document.getElementsByName('inHr')[0].value), 
+			parseInt(document.getElementsByName('inMin')[0].value), 
+			parseInt(document.getElementsByName('inSec')[0].value));
+		if (date.getTimezoneOffset() != 0){
+		    date.setTime( date.getTime() - date.getTimezoneOffset()*60*1000 );
+		}
+		document.getElementsByName('timestamp')[0].value = date.getTime() / 1000;
+		updateHumanDate(date);
+	}
+	
+	function updateHumanDate(date) {
+		var result = document.getElementsByName('result')[0];
+		result.value =
+			dayOfWeek[date.getDay()] + ' ' +
+			monthName[date.getMonth()] + ' ' +
+			date.getDate() + ', ' +
+			(date.getYear() < 1900 ? date.getYear() + 1900 : date.getYear()) + "  " +
+			date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " UTC";
+	}
+
+</script>
+	
 </body>
 </html>
