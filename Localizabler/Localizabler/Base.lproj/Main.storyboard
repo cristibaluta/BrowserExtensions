@@ -687,13 +687,27 @@
                                 <pathCell key="cell" selectable="YES" editable="YES" alignment="left" id="CpB-ea-PKy">
                                     <font key="font" metaFont="system"/>
                                     <url key="url" string="file://localhost/Applications/"/>
-                                    <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="backgroundColor" red="0.89803921568627454" green="0.92549019607843142" blue="0.97254901960784312" alpha="1" colorSpace="deviceRGB"/>
                                 </pathCell>
                             </pathControl>
+                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pnd-0m-jPC">
+                                <rect key="frame" x="18" y="347" width="632" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="lwj-JN-WJ0">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment width="208"/>
+                                        <segment width="208" selected="YES" tag="1"/>
+                                        <segment width="208">
+                                            <nil key="label"/>
+                                        </segment>
+                                    </segments>
+                                </segmentedCell>
+                            </segmentedControl>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="pathControl" destination="k4L-Km-4Xk" id="GD8-gB-Duu"/>
+                        <outlet property="segmentedControl" destination="Pnd-0m-jPC" id="gIN-Ra-TF6"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

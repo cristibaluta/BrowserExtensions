@@ -11,20 +11,25 @@ import Cocoa
 class ViewController: NSViewController {
 
     @IBOutlet var pathControl: NSPathControl?
+    @IBOutlet var segmentedControl: NSSegmentedControl?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let dir = NSUserDefaults.standardUserDefaults().objectForKey("localizationsDirectory") {
+            self.pathControl!.URL = dir as! NSURL
+            self.readDirectoryForLocalizationfiles()
+        }
     }
-
+    
     override var representedObject: AnyObject? {
         didSet {
         // Update the view, if already loaded.
         }
     }
-
-
+    
+    
     @IBAction func chosePathClicked(sender: NSButton) {
         let panel = NSOpenPanel()
         panel.canChooseFiles = false
@@ -34,7 +39,9 @@ class ViewController: NSViewController {
             print(result)
             if result == NSFileHandlingPanelOKButton {
                 print(panel.URLs.first)
-                self.pathControl?.URL = panel.URLs.first
+                self.pathControl!.URL = panel.URLs.first
+//                NSUserDefaults.standardUserDefaults().setObject(panel.URLs.first, forKey: "localizationsDirectory")
+//                NSUserDefaults.standardUserDefaults().synchronize()
                 self.readDirectoryForLocalizationfiles()
             }
         }
@@ -42,19 +49,31 @@ class ViewController: NSViewController {
     
     func readDirectoryForLocalizationfiles() {
         
-        let fileManager = NSFileManager.defaultManager()
-        let files = try fileManager.contentsOfDirectoryAtURL(self.pathControl!.URL!, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions)
-        for file in files {
-            
-        }
-        
-        
-        let enumerator = fileManager.enumeratorAtPath((self.pathControl?.URL?.absoluteString)!)
-        print(enumerator)
-        while let element = enumerator?.nextObject() as? String {
-            if element.hasSuffix("lproj") {
-                print(element)
+        _ = SearchIOSLocalizations().searchInDirectory(self.pathControl!.URL!) { (localizationsDict) -> Void in
+            print(localizationsDict)
+            self.segmentedControl!.segmentCount = localizationsDict.count
+            var i = 0
+            for (key, _) in localizationsDict {
+                self.segmentedControl?.setLabel(key, forSegment: i)
+                i++
             }
+            
+            self.readFile(localizationsDict["en"]!)
+        }
+    }
+    
+    func readFile(url: NSURL) {
+        
+//        let data = NSFileManager.defaultManager().contentsAtPath(url.path!)
+//        print(data)
+        
+        if let aStreamReader = StreamReader(path: url.path!) {
+            while let line = aStreamReader.nextLine() {
+                print(line)
+            }
+            // You can close the underlying file explicitly. Otherwise it will be
+            // closed when the reader is deallocated.
+            aStreamReader.close()
         }
     }
 }
