@@ -10,7 +10,8 @@ import Foundation
 
 protocol LocalizationFile {
 
-    func initWithURL(url: NSURL)
+	init(url: NSURL)
+	init(content: String)
     func allTerms() -> [String]
     func translationForTerm(term: String) -> String
     func updateTranslationForTerm(term: String, newValue: String)

@@ -12,6 +12,7 @@ class ViewController: NSViewController {
 
     @IBOutlet var pathControl: NSPathControl?
     @IBOutlet var segmentedControl: NSSegmentedControl?
+	var languages = [String: LocalizationFile]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,12 +54,11 @@ class ViewController: NSViewController {
             print(localizationsDict)
             self.segmentedControl!.segmentCount = localizationsDict.count
             var i = 0
-            for (key, _) in localizationsDict {
+            for (key, url) in localizationsDict {
+				self.languages[key] = IOSLocalizationFile(url: url)
                 self.segmentedControl?.setLabel(key, forSegment: i)
                 i++
             }
-            
-            self.readFile(localizationsDict["en"]!)
         }
     }
     
@@ -67,13 +67,6 @@ class ViewController: NSViewController {
 //        let data = NSFileManager.defaultManager().contentsAtPath(url.path!)
 //        print(data)
         
-        if let aStreamReader = StreamReader(path: url.path!) {
-            while let line = aStreamReader.nextLine() {
-                print(line)
-            }
-            // You can close the underlying file explicitly. Otherwise it will be
-            // closed when the reader is deallocated.
-            aStreamReader.close()
-        }
+        
     }
 }
