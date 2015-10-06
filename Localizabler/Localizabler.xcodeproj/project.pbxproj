@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		28778A631BBF1DBB003E4880 /* IOSLocalizationFileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28778A621BBF1DBB003E4880 /* IOSLocalizationFileTests.swift */; settings = {ASSET_TAGS = (); }; };
+		28EF6A2E1BC38A4700F8E725 /* test.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28EF6A2D1BC38A4700F8E725 /* test.strings */; settings = {ASSET_TAGS = (); }; };
+		28EF6A311BC38E6C00F8E725 /* StringExtenssion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EF6A301BC38E6C00F8E725 /* StringExtenssion.swift */; settings = {ASSET_TAGS = (); }; };
+		28EF6A321BC38E7100F8E725 /* StringExtenssion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EF6A301BC38E6C00F8E725 /* StringExtenssion.swift */; settings = {ASSET_TAGS = (); }; };
 		6D1E1A761BBD5C6C00BE29EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E1A751BBD5C6C00BE29EE /* AppDelegate.swift */; };
 		6D1E1A781BBD5C6C00BE29EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E1A771BBD5C6C00BE29EE /* ViewController.swift */; };
 		6D1E1A7A1BBD5C6C00BE29EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D1E1A791BBD5C6C00BE29EE /* Assets.xcassets */; };
 		6D1E1A7D1BBD5C6C00BE29EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D1E1A7B1BBD5C6C00BE29EE /* Main.storyboard */; };
-		6D1E1A881BBD5C6C00BE29EE /* LocalizablerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E1A871BBD5C6C00BE29EE /* LocalizablerTests.swift */; };
-		6D1E1A931BBD5C6C00BE29EE /* LocalizablerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E1A921BBD5C6C00BE29EE /* LocalizablerUITests.swift */; };
 		6D1E1AA21BBE686600BE29EE /* SearchLocalizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E1AA11BBE686600BE29EE /* SearchLocalizations.swift */; settings = {ASSET_TAGS = (); }; };
 		6D1E1AA31BBE686600BE29EE /* SearchLocalizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E1AA11BBE686600BE29EE /* SearchLocalizations.swift */; settings = {ASSET_TAGS = (); }; };
 		6D1E1AA51BBE6CBD00BE29EE /* SearchIOSLocalizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E1AA41BBE6CBD00BE29EE /* SearchIOSLocalizations.swift */; settings = {ASSET_TAGS = (); }; };
@@ -34,17 +35,12 @@
 			remoteGlobalIDString = 6D1E1A711BBD5C6C00BE29EE;
 			remoteInfo = Localizabler;
 		};
-		6D1E1A8F1BBD5C6C00BE29EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D1E1A6A1BBD5C6C00BE29EE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6D1E1A711BBD5C6C00BE29EE;
-			remoteInfo = Localizabler;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		28778A621BBF1DBB003E4880 /* IOSLocalizationFileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOSLocalizationFileTests.swift; sourceTree = "<group>"; };
+		28EF6A2D1BC38A4700F8E725 /* test.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = test.strings; sourceTree = "<group>"; };
+		28EF6A301BC38E6C00F8E725 /* StringExtenssion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtenssion.swift; sourceTree = "<group>"; };
 		6D1E1A721BBD5C6C00BE29EE /* Localizabler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Localizabler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1E1A751BBD5C6C00BE29EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D1E1A771BBD5C6C00BE29EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,11 +48,7 @@
 		6D1E1A7C1BBD5C6C00BE29EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D1E1A7E1BBD5C6C00BE29EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D1E1A831BBD5C6C00BE29EE /* LocalizablerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalizablerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D1E1A871BBD5C6C00BE29EE /* LocalizablerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizablerTests.swift; sourceTree = "<group>"; };
 		6D1E1A891BBD5C6C00BE29EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D1E1A8E1BBD5C6C00BE29EE /* LocalizablerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalizablerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D1E1A921BBD5C6C00BE29EE /* LocalizablerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizablerUITests.swift; sourceTree = "<group>"; };
-		6D1E1A941BBD5C6C00BE29EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D1E1AA11BBE686600BE29EE /* SearchLocalizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocalizations.swift; sourceTree = "<group>"; };
 		6D1E1AA41BBE6CBD00BE29EE /* SearchIOSLocalizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchIOSLocalizations.swift; sourceTree = "<group>"; };
 		6D1E1AA71BBE939400BE29EE /* LocalizationFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationFile.swift; sourceTree = "<group>"; };
@@ -73,13 +65,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6D1E1A801BBD5C6C00BE29EE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D1E1A8B1BBD5C6C00BE29EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -104,12 +89,19 @@
 			name = "Data access";
 			sourceTree = "<group>";
 		};
+		28EF6A2F1BC38E3200F8E725 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				28EF6A301BC38E6C00F8E725 /* StringExtenssion.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		6D1E1A691BBD5C6B00BE29EE = {
 			isa = PBXGroup;
 			children = (
 				6D1E1A741BBD5C6C00BE29EE /* Localizabler */,
 				6D1E1A861BBD5C6C00BE29EE /* LocalizablerTests */,
-				6D1E1A911BBD5C6C00BE29EE /* LocalizablerUITests */,
 				6D1E1A731BBD5C6C00BE29EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,7 +111,6 @@
 			children = (
 				6D1E1A721BBD5C6C00BE29EE /* Localizabler.app */,
 				6D1E1A831BBD5C6C00BE29EE /* LocalizablerTests.xctest */,
-				6D1E1A8E1BBD5C6C00BE29EE /* LocalizablerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +118,7 @@
 		6D1E1A741BBD5C6C00BE29EE /* Localizabler */ = {
 			isa = PBXGroup;
 			children = (
+				28EF6A2F1BC38E3200F8E725 /* Extensions */,
 				28778A611BBEF178003E4880 /* Data access */,
 				28778A601BBEF139003E4880 /* Entities */,
 				6D1E1AA01BBE651F00BE29EE /* UseCases */,
@@ -138,20 +130,11 @@
 		6D1E1A861BBD5C6C00BE29EE /* LocalizablerTests */ = {
 			isa = PBXGroup;
 			children = (
-				6D1E1A871BBD5C6C00BE29EE /* LocalizablerTests.swift */,
 				28778A621BBF1DBB003E4880 /* IOSLocalizationFileTests.swift */,
+				28EF6A2D1BC38A4700F8E725 /* test.strings */,
 				6D1E1A891BBD5C6C00BE29EE /* Info.plist */,
 			);
 			path = LocalizablerTests;
-			sourceTree = "<group>";
-		};
-		6D1E1A911BBD5C6C00BE29EE /* LocalizablerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6D1E1A921BBD5C6C00BE29EE /* LocalizablerUITests.swift */,
-				6D1E1A941BBD5C6C00BE29EE /* Info.plist */,
-			);
-			path = LocalizablerUITests;
 			sourceTree = "<group>";
 		};
 		6D1E1AA01BBE651F00BE29EE /* UseCases */ = {
@@ -215,24 +198,6 @@
 			productReference = 6D1E1A831BBD5C6C00BE29EE /* LocalizablerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6D1E1A8D1BBD5C6C00BE29EE /* LocalizablerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6D1E1A9D1BBD5C6C00BE29EE /* Build configuration list for PBXNativeTarget "LocalizablerUITests" */;
-			buildPhases = (
-				6D1E1A8A1BBD5C6C00BE29EE /* Sources */,
-				6D1E1A8B1BBD5C6C00BE29EE /* Frameworks */,
-				6D1E1A8C1BBD5C6C00BE29EE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6D1E1A901BBD5C6C00BE29EE /* PBXTargetDependency */,
-			);
-			name = LocalizablerUITests;
-			productName = LocalizablerUITests;
-			productReference = 6D1E1A8E1BBD5C6C00BE29EE /* LocalizablerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -246,10 +211,6 @@
 						CreatedOnToolsVersion = 7.0.1;
 					};
 					6D1E1A821BBD5C6C00BE29EE = {
-						CreatedOnToolsVersion = 7.0.1;
-						TestTargetID = 6D1E1A711BBD5C6C00BE29EE;
-					};
-					6D1E1A8D1BBD5C6C00BE29EE = {
 						CreatedOnToolsVersion = 7.0.1;
 						TestTargetID = 6D1E1A711BBD5C6C00BE29EE;
 					};
@@ -270,7 +231,6 @@
 			targets = (
 				6D1E1A711BBD5C6C00BE29EE /* Localizabler */,
 				6D1E1A821BBD5C6C00BE29EE /* LocalizablerTests */,
-				6D1E1A8D1BBD5C6C00BE29EE /* LocalizablerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -289,13 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D1E1A8C1BBD5C6C00BE29EE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				28EF6A2E1BC38A4700F8E725 /* test.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EF6A311BC38E6C00F8E725 /* StringExtenssion.swift in Sources */,
 				6D1E1AA81BBE939400BE29EE /* LocalizationFile.swift in Sources */,
 				6D1E1AA51BBE6CBD00BE29EE /* SearchIOSLocalizations.swift in Sources */,
 				6D1E1A781BBD5C6C00BE29EE /* ViewController.swift in Sources */,
@@ -320,21 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EF6A321BC38E7100F8E725 /* StringExtenssion.swift in Sources */,
 				6D1E1AAF1BBEB94E00BE29EE /* StreamReader.swift in Sources */,
 				6D1E1AA61BBE6CBD00BE29EE /* SearchIOSLocalizations.swift in Sources */,
 				28778A631BBF1DBB003E4880 /* IOSLocalizationFileTests.swift in Sources */,
 				6D1E1AAC1BBE93AB00BE29EE /* IOSLocalizationFile.swift in Sources */,
 				6D1E1AA91BBE939400BE29EE /* LocalizationFile.swift in Sources */,
 				6D1E1AA31BBE686600BE29EE /* SearchLocalizations.swift in Sources */,
-				6D1E1A881BBD5C6C00BE29EE /* LocalizablerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D1E1A8A1BBD5C6C00BE29EE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6D1E1A931BBD5C6C00BE29EE /* LocalizablerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,11 +292,6 @@
 			isa = PBXTargetDependency;
 			target = 6D1E1A711BBD5C6C00BE29EE /* Localizabler */;
 			targetProxy = 6D1E1A841BBD5C6C00BE29EE /* PBXContainerItemProxy */;
-		};
-		6D1E1A901BBD5C6C00BE29EE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6D1E1A711BBD5C6C00BE29EE /* Localizabler */;
-			targetProxy = 6D1E1A8F1BBD5C6C00BE29EE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -495,32 +437,6 @@
 			};
 			name = Release;
 		};
-		6D1E1A9E1BBD5C6C00BE29EE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = LocalizablerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ralcr.LocalizablerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Localizabler;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		6D1E1A9F1BBD5C6C00BE29EE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = LocalizablerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ralcr.LocalizablerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Localizabler;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -547,15 +463,6 @@
 			buildConfigurations = (
 				6D1E1A9B1BBD5C6C00BE29EE /* Debug */,
 				6D1E1A9C1BBD5C6C00BE29EE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6D1E1A9D1BBD5C6C00BE29EE /* Build configuration list for PBXNativeTarget "LocalizablerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6D1E1A9E1BBD5C6C00BE29EE /* Debug */,
-				6D1E1A9F1BBD5C6C00BE29EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
