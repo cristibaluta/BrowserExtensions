@@ -5,6 +5,16 @@ body {
     margin: 0;
 }
  
+.bg {
+	background-color: #ddd;
+	border-radius: 16px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+	width: 520px;
+	height: 200px;
+}
+
 .hex {
     font: 10px "Lucida Grande";
     font-weight: normal;
@@ -17,7 +27,7 @@ body {
 }
 
 .str {
-    font: 10px "Lucida Grande";
+    font: 12px "Lucida Grande";
     font-weight: normal;
     color: black;
     position: absolute;
@@ -37,14 +47,14 @@ textarea, input {
 </head>
  
 <body>
-	<img src="Default.png" />
+	<div class="bg"></div>
 	<textarea class="hex" name="hex" size="12" onkeyup="toStr()" placeholder="Enter hex here..."></textarea>
 	<textarea class="str" name="str" size="12" onkeyup="toHex()" placeholder="Enter string here..."></textarea>
 	
 <script>
 	function toStr() {
 		var hex = document.getElementsByName('hex')[0].value;
-		document.getElementsByName('str')[0].value = hexToString(hex);
+		document.getElementsByName('str')[0].value = hexToString( replaceAll(hex, " ", ""));
 	}
 
 	function toHex() {
@@ -66,6 +76,10 @@ textarea, input {
 	        str += tmp[i].charCodeAt(0).toString(16);
 	    }
 	    return str;
+	}
+	
+	function replaceAll(str, find, replace) {
+	    return str.replace(new RegExp(find, 'g'), replace);
 	}
 
 </script>
