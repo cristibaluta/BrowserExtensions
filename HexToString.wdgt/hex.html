@@ -1,0 +1,74 @@
+<html>
+<head>
+<style>
+body {
+    margin: 0;
+}
+ 
+.hex {
+    font: 10px "Lucida Grande";
+    font-weight: normal;
+    color: black;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+	width: 500px;
+	height: 80px;
+}
+
+.str {
+    font: 10px "Lucida Grande";
+    font-weight: normal;
+    color: black;
+    position: absolute;
+    top: 100px;
+    left: 10px;
+	width: 500px;
+	height: 80px;
+}
+
+textarea, input {
+	background-color: transparent;
+	border: 0px solid;
+	text-align: left;
+	resize: none;
+}
+</style>
+</head>
+ 
+<body>
+	<img src="Default.png" />
+	<textarea class="hex" name="hex" size="12" onkeyup="toStr()" placeholder="Enter hex here..."></textarea>
+	<textarea class="str" name="str" size="12" onkeyup="toHex()" placeholder="Enter string here..."></textarea>
+	
+<script>
+	function toStr() {
+		var hex = document.getElementsByName('hex')[0].value;
+		document.getElementsByName('str')[0].value = hexToString(hex);
+	}
+
+	function toHex() {
+		var string = document.getElementsByName('str')[0].value;
+		document.getElementsByName('hex')[0].value = stringToHex(string);
+	}
+	
+	function hexToString (hex) {
+	    var string = '';
+	    for (var i = 0; i < hex.length; i += 2) {
+	      string += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+	    }
+	    return string;
+	}
+	
+	function stringToHex (tmp) {
+	    var str = '';
+	    for(var i = 0; i < tmp.length; i++) {
+	        str += tmp[i].charCodeAt(0).toString(16);
+	    }
+	    return str;
+	}
+
+</script>
+	
+</body>
+</html>
